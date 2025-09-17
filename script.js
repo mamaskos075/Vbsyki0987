@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const countdownElement = document.getElementById('countdown');
     const claimButton = document.getElementById('claim-voucher-btn');
-    const targetPhoneNumber = '+62887834224096';
+    const targetPhoneNumber = '+6287834224096';
 
     function startCountdown() {
         let endTime = localStorage.getItem('countdownEndTime');
@@ -455,7 +455,7 @@ setupAccordion('.faq-container'); // Pastikan ini juga dipanggil untuk FAQ jika 
         button.addEventListener('click', (event) => {
             event.preventDefault();
             const jobTitle = button.parentElement.querySelector('.freelancer-job').textContent;
-            const targetPhoneNumber = '+62887834224096';
+            const targetPhoneNumber = '+6287834224096';
             const message = encodeURIComponent(`Halo, saya tertarik untuk mendaftar sebagai ${jobTitle}. Apakah ada lowongan yang tersedia?`);
             const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${message}`;
             window.open(whatsappUrl, '_blank');
