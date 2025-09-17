@@ -1,12 +1,12 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const countdownElement = document.getElementById('countdown');
+    const countdownElement = document.getElementById('countdown-1');
     const totalHours = 72;
     const totalMilliseconds = totalHours * 60 * 60 * 1000;
     let endTime;
 
     // Periksa apakah waktu akhir sudah tersimpan di localStorage
-    const storedEndTime = localStorage.getItem('countdownEndTime');
+    const storedEndTime = localStorage.getItem('countdownEndTime-1');
 
     if (storedEndTime && !isNaN(new Date(storedEndTime).getTime())) {
         // Gunakan waktu yang tersimpan jika valid
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         // Jika tidak valid atau tidak ada, atur waktu baru
         endTime = new Date().getTime() + totalMilliseconds;
-        localStorage.setItem('countdownEndTime', new Date(endTime).toISOString());
+        localStorage.setItem('countdownEndTime-1', new Date(endTime).toISOString());
     }
 
     function updateCountdown() {
