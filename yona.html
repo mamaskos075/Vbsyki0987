@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maskos Joki Tugas</title>
+    <link rel="stylesheet" href="style/yona.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+             <a href="#">Maskos Joki Tugas</a>
+             <span class="logo-tag">Yona</span>
+        </div>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#produk">Produk</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+        <div class="icons">
+            <div class="cart-icon-container">
+                <i class="fas fa-shopping-basket" id="keranjang"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </div>
+            <i class="fas fa-bars" id="hamburger-btn"></i>
+        </div>
+        
+        <div class="cart-popup" id="cart-popup">
+            <div class="cart-header">
+                <h3>Keranjang Belanja</h3>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="summary-item">
+                    <span class="summary-label">Total Produk:</span>
+                    <span id="sub-total-price">Rp 0</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Total Diskon:</span>
+                    <span id="discount-total-price">Rp 0</span>
+                </div>
+                <div class="total-price-container">
+                    <span>Total:</span>
+                    <span id="total-price">Rp 0</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">Checkout Sekarang</button>
+            </div>
+        </div>
+    </header>
+      
+    <main class="main-content">
+        <section id="home">
+            <div class="search-bar-container">
+                <input type="text" class="search-input" placeholder="Cari produk joki...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+        
+        <section id="produk">
+            <h2 class="section-title">Pilihan Joki Tugas</h2>
+            <div class="message-bubble-container">
+                <div class="tutor-icon">
+                    <img src="images/foto-yona.jpg" alt="Tutor Zafina" class="tutor-image">
+                </div>
+                <div class="message-bubble">
+                    <p>Hallo! 👋 Aku Yona yang akan membantu mengerjakan tugas sekolah atau kuliahmu. Aku akan membantu mengerjakannya tepat waktu</p>
+                    <div class="bubble-tail"></div>
+                </div>
+            </div>
+
+            <div class="product-container" id="product-list">
+                <div class="product-card" data-product-id="1">
+                    <h3 class="product-title">Joki Tugas Makalah</h3>
+                    <p class="product-description">Jasa joki tugas makalah berkualitas dengan tulisan rapi dan deadline terkejar, garansi nilai bagus dan kepuasan pelanggan</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 110.000</span>
+                        <span class="discount-price">Rp 25.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="2">
+                    <h3 class="product-title">Joki Tugas Paper</h3>
+                    <p class="product-description">Jasa joki tugas paper berkualitas dengan penelitian mendalam dan penulisan rapi, garansi nilai bagus dan kepuasan pelanggan</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 99000</span>
+                        <span class="discount-price">Rp 25.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="3">
+                    <h3 class="product-title">Joki Tugas Skripsi BAB I</h3>
+                    <p class="product-description">Jasa joki tugas skripsi Bab I berkualitas dengan latar belakang, rumusan masalah, dan tujuan penelitian yang jelas, garansi hasil memuaskan</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 350.000</span>
+                        <span class="discount-price">Rp 80.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="4">
+                    <h3 class="product-title">Joki Tugas Skripsi BAB II dan III</h3>
+                    <p class="product-description">Jasa joki tugas skripsi Bab II dan III berkualitas dengan tinjauan pustaka dan kerangka teori yang komprehensif, garansi hasil memuaskan dan nilai bagus</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 400.000</span>
+                        <span class="discount-price">Rp 120.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="5">
+                    <h3 class="product-title">Joki Tugas Skripsi BAB (Pembahasan)</h3>
+                    <p class="product-description">Jasa joki tugas skripsi Bab Pembahasan berkualitas dengan analisis data mendalam dan interpretasi hasil yang tepat, garansi hasil memuaskan dan nilai bagus</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 900.000</span>
+                        <span class="discount-price">Rp 250.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="6">
+                    <h3 class="product-title">Joki Tugas Skripsi (Paket Sempro)</h3>
+                    <p class="product-description">Jasa joki tugas skripsi paket SEMPRO (Seminar Proposal) berkualitas dengan proposal lengkap, sistematika penulisan yang rapi, dan garansi kelulusan seminar.</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 750.000</span>
+                        <span class="discount-price">Rp 150.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="7">
+                    <h3 class="product-title">Joki Tugas Skripsi (Paket Full BAB)</h3>
+                    <p class="product-description">Jasa joki tugas skripsi full bab berkualitas dengan penulisan komprehensif, analisis mendalam, dan garansi hasil memuaskan dari Bab I hingga Bab terakhir.</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 2500.000</span>
+                        <span class="discount-price">Rp 450.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="8">
+                    <h3 class="product-title">Joki Tugas Presentasi</h3>
+                    <p class="product-description">Jasa joki tugas membuat PPT presentasi berkualitas dengan desain menarik, layout rapi, dan konten informatif, garansi presentasi jadi lebih maksimal.</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 50.000</span>
+                        <span class="discount-price">Rp 20.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="9">
+                    <h3 class="product-title">Joki Tugas Artikel</h3>
+                    <p class="product-description">Jasa joki tugas membuat artikel berkualitas dengan penulisan menarik, struktur jelas, dan konten informatif.</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 80.000</span>
+                        <span class="discount-price">Rp 15.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="10">
+                    <h3 class="product-title">Joki Tugas Resume</h3>
+                    <p class="product-description">Jasa joki tugas resume jurnal/artikel berkualitas dengan rangkuman yang padat, jelas, dan sistematis, garansi pemahaman materi lebih mudah dan cepat.</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 50.000</span>
+                        <span class="discount-price">Rp 15.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="11">
+                    <h3 class="product-title">Joki Tugas Soal atau Quiz</h3>
+                    <p class="product-description">Jasa joki tugas menjawab soal/quiz berkualitas dengan jawaban akurat, penjelasan detail, dan garansi nilai memuaskan. Bisa untuk berbagai mata pelajaran atau topik.</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 60.000</span>
+                        <span class="discount-price">Rp 20.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="12">
+                    <h3 class="product-title">Joki Tugas Rangkuman</h3>
+                    <p class="product-description">Jasa joki tugas rangkuman berkualitas dengan penyajian informasi yang padat, jelas, dan sistematis, garansi materi lebih mudah dipahami dan diingat.</p>
+                    <div class="product-price">
+                        <span class="original-price">Rp 70.000</span>
+                        <span class="discount-price">Rp 15.000</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart">Tambahkan ke Keranjang <i class="fas fa-shopping-basket"></i></button>
+                        <button class="view-details">Lihat Detail Produk</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+ 
+    <div id="product-detail-popup" class="product-detail-popup">
+        <div class="popup-content">
+            <span class="close-popup-btn">&times;</span>
+            <h3 id="popup-product-title"></h3>
+            <p id="popup-product-description"></p>
+            <p id="popup-product-price"></p>
+            
+            <div class="attention-message">
+                ⚠️ **Perhatian:** Harga yang tertera adalah harga uang muka (DP). Harga total menyesuaikan tingkat kesulitan tugas.
+            </div>
+            
+            <button class="add-to-cart-popup">Tambahkan ke Keranjang</button>
+        </div>
+    </div>
+       
+    <section id="reviews" class="review-section">
+        <div class="invalid-link-message" id="invalid-link-message">
+            <h2 class="section-title">Puas dengan layanan kami?</h2>
+            <p class="section-description">Berikan ulasan Mu sekarang dan dapatkan diskon spesial untuk pesanan selanjutnya</p>
+            <a href="https://wa.me/6287834224096?text=Halo%20admin%20Maskos,%20saya%20ingin%20memberikan%20ulasan%20tentang%20layanan%20joki%20tugas%20web." target="_blank" class="whatsapp-btn">
+                <i class="fa fa-comments"></i> Berikan Ulasanmu Sekarang
+            </a>
+        </div>
+        
+        <div class="review-list-container">
+            <div id="reviews-list">
+                 <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-info">Budi S.</span>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-service">Jasa yang digunakan: Joki Tugas Skripsi</p>
+                    <p class="review-text">Hasilnya sangat memuaskan, skripsi saya selesai tepat waktu dan mendapatkan nilai A!</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-info">Siti A.</span>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-service">Jasa yang digunakan: Joki Tugas Coding</p>
+                    <p class="review-text">Sangat terbantu untuk tugas pemrograman. Kodenya bersih dan mudah dipahami. Terima kasih!</p>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-info">Rina P.</span>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-service">Jasa yang digunakan: Joki Tugas Makalah</p>
+                    <p class="review-text">Makalah saya dikerjakan dengan rapi dan isinya sangat berbobot. Recomended banget!</p>
+                </div>
+                 <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-info">Agus S.</span>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="review-service">Jasa yang digunakan: Joki Tugas Presentasi</p>
+                    <p class="review-text">Presentasi dibuat dengan desain yang keren dan informatif. Pengerjaannya juga cepat.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="other-services">
+        <h2 class="section-title">Jasa Lain dari Maskos</h2>
+        <div class="services-container">
+            <a href="#" class="service-btn">Cari Kos</a>
+            <a href="#" class="service-btn">Bikin Web Portofolio</a>
+            <a href="#" class="service-btn">Bikin CV Kerja</a>
+            <a href="#" class="service-btn">Maskos Courses</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Joki Tugas by <a href="https://maskos.web.id" target="_blank">Maskos</a></p>
+    </footer>
+
+    <a href="https://wa.me/6287834224096?text=Halo%20Maskos,%20saya%20tertarik%20dengan%20layanan%20joki%20tugas." target="_blank" class="whatsapp-float-btn">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat Maskos</span>
+    </a>
+
+    <div id="tutor-detail-popup" class="tutor-detail-popup">
+        <div class="popup-content">
+            <span class="close-popup-btn-tutor">&times;</span>
+            <div class="popup-header">
+                <img id="popup-tutor-photo" src="" alt="Foto Tutor" class="popup-tutor-photo">
+                <h3 id="popup-tutor-name"></h3>
+            </div>
+            <div class="popup-info">
+                <p><strong>Pendidikan:</strong> <span id="popup-tutor-education"></span></p>
+                <p><strong>Tugas Terselesaikan:</strong> <span id="popup-tutor-tasks"></span></p>
+                <p id="popup-tutor-description"></p>
+            </div>
+            <button class="select-tutor-btn" id="select-tutor-btn">Pilih Tutor</button>
+        </div>
+    </div>
+
+    <div id="custom-alert" class="custom-popup">
+        <div class="custom-popup-content">
+            <span id="custom-alert-message">Pesan notifikasi</span>
+            <button id="custom-alert-close" class="custom-popup-btn">OK</button>
+        </div>
+    </div>
+
+    <div id="custom-confirm" class="custom-popup">
+        <div class="custom-popup-content">
+            <span id="custom-confirm-message">Pesan konfirmasi</span>
+            <div class="custom-popup-buttons">
+                <button id="confirm-yes" class="custom-popup-btn confirm-yes">Ya</button>
+                <button id="confirm-no" class="custom-popup-btn confirm-no">Tidak</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="payment-popup" class="custom-popup">
+        <div class="custom-popup-content">
+            <span id="close-payment-popup" class="close-popup-btn">&times;</span>
+            <h3>Lengkapi Data Anda</h3>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="customer-name">Nama Lengkap</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Nomor Telepon (WhatsApp)</label>
+                    <input type="tel" id="customer-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="tutor-select">Pilih Tutor</label>
+                    <select id="tutor-select" required>
+                        <option value="">-- Pilih Tutor --</option>
+                        <option value="Yona">Yona</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method-select">Metode Pembayaran</label>
+                    <select id="payment-method-select" required>
+                        <option value="">-- Pilih Metode --</option>
+                        <option value="Transfer Bank BCA">Transfer Bank BCA</option>
+                        <option value="E-Wallet (Dana, OVO, GoPay)">E-Wallet (Dana, OVO, GoPay)</option>
+                        <option value="QRIS">QRIS</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Lanjutkan ke WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="yona.js"></script>
+</body>
+</html>
