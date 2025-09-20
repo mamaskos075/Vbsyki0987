@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '2': { name: 'zafina', education: 'S1 Universitas Brawijaya', tasks: '10+', description: '' },
         '3': { name: 'yona', education: 'S1 Universitas Brawijaya', tasks: '10+', description: '' },
         '4': { name: 'Adi', education: 'S1 Universitas Brawijaya', tasks: '10+', description: '' },
-        '5': { name: 'Adi', education: 'S1 Universitas Brawijaya', tasks: '10+', description: '' }
+        '5': { name: 'Rahman', education: 'S1 Universitas Brawijaya', tasks: '10+', description: '' }
     };
 
     const cartIconContainer = document.querySelector('.cart-icon-container');
