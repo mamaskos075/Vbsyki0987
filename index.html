@@ -71,25 +71,29 @@
                 <p class="section-subtitle">Klik dan pilih layanan yang kamu inginkan</p>
             </div>
             <div class="app-grid">
-                <a href="kunci.html" class="app-card">
+                <a href="#" class="app-card">
                     <img src="images/icon-1.png" alt="Ikon Cari Kos">
                     <span class="app-label">Cari Kos</span>
                 </a>
-                <a href="kunci.html" class="app-card">
-                    <img src="images/icon-2.png" alt="Ikon Maskos Cargo">
-                    <span class="app-label">Maskos Cargo</span>
-                </a>
                 <a href="joki.html" class="app-card">
-                    <img src="images/icon-4.png" alt="Ikon Maskos Joki Tugas">
+                    <img src="images/icon-2.png" alt="Ikon Maskos Cargo">
                     <span class="app-label">Joki Tugas</span>
                 </a>
-                <a href="kunci.html" class="app-card">
+                <a href="#" class="app-card">
                     <img src="images/icon-3.png" alt="Ikon Maskos Karir">
+                    <span class="app-label">Bikin Web Portofolio</span>
+                </a>
+                <a href="#" class="app-card">
+                    <img src="images/icon-2.png" alt="Ikon Maskos Joki Tugas">
                     <span class="app-label">Maskos Course</span>
                 </a>
-                <a href="kunci.html" class="app-card">
+                <a href="#" class="app-card">
                     <img src="images/icon-5.png" alt="Ikon Maskos Design Kreatif">
-                    <span class="app-label">Design Kreatif</span>
+                    <span class="app-label">TalkSphere</span>
+                </a>
+                <a href="#" class="app-card">
+                    <img src="images/icon-6.png" alt="Ikon Maskos Design Kreatif">
+                    <span class="app-label">WikyTrip</span>
                 </a>
             </div>
         </section>
@@ -100,7 +104,7 @@
                 <div class="voucher-card-wrapper">
                     <div class="voucher-card voucher-card-1">
                         <div class="voucher-content">
-                            <h3>Diskon 50%</h3>
+                            <h3>Dapatkan Diskon 50%</h3>
                             <p class="voucher-description">Berlaku untuk semua layanan</p>
                             <p class="voucher-validity">Penawaran berlaku hingga 25 Nov 2025</p>
                             <div class="voucher-code-box">
@@ -113,11 +117,11 @@
                     <div class="voucher-card voucher-card-2">
                         <div class="voucher-content">
                             <h3>Gratis 1x Revisi</h3>
-                            <p class="voucher-description">Untuk layanan Design Kreatif</p>
+                            <p class="voucher-description">Untuk layanan Bikin Web Portofolio</p>
                             <p class="voucher-validity">Penawaran berlaku hingga 25 Okt 2025</p>
                             <div class="voucher-code-box">
                                 <span class="voucher-code">REV1KALI</span>
-                                <button class="copy-btn" data-code="GRATISONGKIR">Salin</button>
+                                <button class="copy-btn" data-code="REV1KALI">Salin</button>
                             </div>
                             <p class="voucher-terms">Syarat & Ketentuan Berlaku</p>
                         </div>
@@ -125,11 +129,11 @@
                     <div class="voucher-card voucher-card-3">
                         <div class="voucher-content">
                             <h3>Diskos Course</h3>
-                            <p class="voucher-description">Disk 5RB untuk maskos course</p>
+                            <p class="voucher-description">Potongan 5RB untuk maskos course</p>
                             <p class="voucher-validity">Penawaran berlaku hingga 25 Nov 2025</p>
                             <div class="voucher-code-box">
                                 <span class="voucher-code">MKCRS5</span>
-                                <button class="copy-btn" data-code="JOKIMK25">Salin</button>
+                                <button class="copy-btn" data-code="MKCRS5">Salin</button>
                             </div>
                             <p class="voucher-terms">Syarat & Ketentuan Berlaku</p>
                         </div>
@@ -380,38 +384,16 @@
                 <i class="chat-icon fas fa-comment-dots animate-pulse"></i>
             </div>
         </a>
-
-        <div id="guide-overlay"></div>
-        <div id="guide-person">
-            <img src="images/aktor-guide.png" alt="Aktor Panduan" class="guide-person-image">
-        </div>
-        <div id="guide-bubble">
-            <div class="guide-text-container">
-                <p id="guide-text"></p>
-            </div>
-            <div class="guide-controls">
-                <button id="guide-skip">Lewati</button>
-                <button id="guide-next">Lanjut</button>
-            </div>
-            <div id="guide-arrow"></div>
-        </div>
-
-        <div id="modal-syarat" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h3 class="modal-title">Syarat & Ketentuan Freelancer</h3>
-                <div class="modal-text-content">
-                    <p>Syarat dan ketentuan ini berlaku untuk semua freelancer yang bergabung dengan Maskos:</p>
-                    <ol>
-                        <li>Memiliki komitmen untuk menyelesaikan pekerjaan sesuai dengan tenggat waktu.</li>
-                        <li>Bertanggung jawab penuh atas kualitas pekerjaan yang diserahkan.</li>
-                        <li>Bersedia bekerja sama dengan tim dan klien untuk mencapai hasil terbaik.</li>
-                        <li>Pembayaran akan diproses setelah pekerjaan disetujui oleh klien dan tim Maskos.</li>
-                    </ol>
-                </div>
+        
+        <div id="image-popup" class="modal">
+            <div class="modal-content image-popup-content">
+                <span class="close-btn popup-close-btn" aria-label="Tutup Popup">&times;</span>
+                <a href="https://wa.link/oti11p" id="popup-link" aria-label="Klaim Promo Spesial">
+                    <img src="images/popup1.png" alt="Promo Spesial Maskos" class="popup-image">
+                </a>
             </div>
         </div>
-    </main>
+        </main>
 
     <footer class="footer">
         <div class="footer-container">
