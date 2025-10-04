@@ -1,4 +1,6 @@
-// Fungsionalitas Preloader BARU
+// =========================================================
+// 1. FUNGSIONALITAS PRELOADER
+// =========================================================
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     const loaderIcon = document.getElementById('loader-icon');
@@ -15,6 +17,9 @@ window.addEventListener('load', () => {
     function changeLoader() {
         const step = loaderSteps[currentStep];
 
+        // Pastikan elemen ditemukan
+        if (!loaderIcon || !loaderText) return;
+
         loaderIcon.className = '';
         loaderIcon.classList.add('loader-icon');
         
@@ -27,10 +32,12 @@ window.addEventListener('load', () => {
 
         if (currentStep === 0) {
             setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
+                if (preloader) {
+                    preloader.style.opacity = '0';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
             }, 2000);
         } else {
             setTimeout(changeLoader, 2000);
@@ -42,8 +49,12 @@ window.addEventListener('load', () => {
     }
 });
 
-// Fungsionalitas Hamburger Menu
-document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // =========================================================
+    // 2. FUNGSIONALITAS HAMBURGER MENU
+    // =========================================================
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -53,246 +64,22 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('is-active');
         });
     }
-});
 
-// Fungsionalitas Floating Chat
-document.addEventListener('DOMContentLoaded', () => {
+    // =========================================================
+    // 3. FUNGSIONALITAS FLOATING CHAT (Disederhanakan)
+    // =========================================================
+    // Logika animasi hover di CSS, JavaScript hanya memastikan elemen ada
     const chatLink = document.querySelector('.floating-chat');
-    const chatText = document.querySelector('.chat-text');
-    const chatIcon = document.querySelector('.chat-icon');
-    
-    window.showFloatingChat = () => {
-        chatLink.style.display = 'flex';
-        setTimeout(() => {
-            chatLink.classList.add('show-chat');
-            
-            chatText.classList.add('show');
-            chatIcon.classList.remove('animate-pulse');
-            
-            setTimeout(() => {
-                chatText.classList.remove('show');
-                chatIcon.classList.add('animate-pulse');
-            }, 5000);
-        }, 300);
-    };
-
-    chatLink.addEventListener('mouseenter', () => {
-        chatText.classList.add('show');
-        chatIcon.classList.remove('animate-pulse');
-    });
-
-    chatLink.addEventListener('mouseleave', () => {
-        chatText.classList.remove('show');
-        chatIcon.classList.add('animate-pulse');
-    });
-});
-
-// Fungsionalitas Banner Slideshow
-let bannerIndex = 0;
-const bannerSlideshow = document.getElementById('banner-slideshow');
-const bannerSlides = document.querySelectorAll('.banner-slide');
-const bannerTotalSlides = bannerSlides.length;
-
-function slideBanner() {
-    bannerIndex++;
-    if (bannerIndex >= bannerTotalSlides) {
-        bannerIndex = 0;
-    }
-    const offset = -100 * bannerIndex;
-    bannerSlideshow.style.transform = `translateX(${offset}%)`;
-    setTimeout(slideBanner, 4000);
-}
-
-if (bannerSlides.length > 0) {
-    slideBanner();
-}
-
-// Fungsionalitas Promo Slideshow
-let promoSlideIndex = 0;
-const promoSlides = document.getElementsByClassName("mySlides");
-
-function showPromoSlides() {
-    for (let i = 0; i < promoSlides.length; i++) {
-        promoSlides[i].style.display = "none";
-    }
-    promoSlideIndex++;
-    if (promoSlideIndex > promoSlides.length) {
-        promoSlideIndex = 1;
-    }
-    if (promoSlides.length > 0) {
-        promoSlides[promoSlideIndex - 1].style.display = "block";
-    }
-    setTimeout(showPromoSlides, 4000);
-}
-if (promoSlides.length > 0) {
-    showPromoSlides();
-}
-
-// Fungsionalitas Panduan/Guide
-document.addEventListener('DOMContentLoaded', () => {
-    const guideOverlay = document.getElementById('guide-overlay');
-    const guidePerson = document.getElementById('guide-person');
-    const guideBubble = document.getElementById('guide-bubble');
-    const guideTextElement = document.getElementById('guide-text');
-    const guideNextButton = document.getElementById('guide-next');
-    const guideSkipButton = document.getElementById('guide-skip');
-    const guideArrow = document.getElementById('guide-arrow');
-
-    const guideSteps = [
-        { text: "Hallo kak, kenalin aku maskos.. yang akan memandu kaka berkenalan dengan fitur layanan maskos", target: null },
-        { text: "Disini kaka bisa memilih layanan dengan mudah sesuai yang kami tampilkan", target: '.app-services' },
-        { text: "Untuk memesan layanan kaka cukup pilih tombol layanan yang tersedia, kemudian kaka akan di arahkan ke whatsApp maskos untuk reservasi layanan", target: null },
-        { text: "tidak perlu khawatir, kami menyedikan pembayaran online yang memudahkan kaka dalam bertransaksi", target: null },
-        { text: "Keamanan dan kenyamanan bertransaksi adalah misi utama kami", target: '.floating-chat' },
-        { text: "Selamat menikmati layanan kami" }
-    ];
-
-    let currentStep = 0;
-
-    function createBubbleAnimation() {
-        const existingBubbles = document.querySelectorAll('.bubble-animation');
-        existingBubbles.forEach(bubble => bubble.remove());
-
-        const personRect = guidePerson.getBoundingClientRect();
-        const bubbleRect = guideBubble.getBoundingClientRect();
-
-        const startX = personRect.left + (personRect.width / 2);
-        const startY = personRect.top + (personRect.height / 2);
-
-        const endX = bubbleRect.left + (bubbleRect.width / 2);
-        const endY = bubbleRect.top + (bubbleRect.height / 2);
-
-        const distanceX = endX - startX;
-        const distanceY = endY - startY;
-
-        const totalBubbles = 3;
-        for (let i = 0; i < totalBubbles; i++) {
-            const bubble = document.createElement('div');
-            bubble.classList.add('bubble-animation');
-            
-            bubble.style.left = `${personRect.left + (personRect.width / 2)}px`;
-            bubble.style.top = `${personRect.top + (personRect.height / 2)}px`;
-
-            bubble.style.animation = `popAndMove 1.5s ease-out infinite`;
-            bubble.style.animationDelay = `${i * 0.3}s`;
-
-            const styleSheet = document.styleSheets[0];
-            const keyframesName = `popAndMove-${Date.now()}-${i}`;
-            const keyframes = `@keyframes ${keyframesName} {
-                0% { transform: translate(0, 0) scale(0.2); opacity: 0; }
-                50% { transform: translate(${distanceX * 0.5}px, ${distanceY * 0.5}px) scale(1); opacity: 1; }
-                100% { transform: translate(${distanceX}px, ${distanceY}px) scale(0.5); opacity: 0; }
-            }`;
-            styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
-            bubble.style.animationName = keyframesName;
-
-            document.body.appendChild(bubble);
-        }
+    if (chatLink) {
+        // Hapus logika JavaScript yang mencoba menampilkan/menyembunyikan teks
+        // karena kini dihandle oleh CSS :hover dan media query.
+        // Fungsi showFloatingChat dihapus karena guide sudah tidak ada.
     }
 
-    function showGuideStep(step) {
-        if (step >= guideSteps.length) {
-            hideGuide();
-            return;
-        }
 
-        const current = guideSteps[step];
-        guideTextElement.textContent = current.text;
-
-        const targetElement = current.target ? document.querySelector(current.target) : null;
-        
-        guideArrow.style.display = targetElement ? 'block' : 'none';
-
-        if (targetElement) {
-            const bubbleRect = guideBubble.getBoundingClientRect();
-            const targetRect = targetElement.getBoundingClientRect();
-            
-            const arrowX = targetRect.left + (targetRect.width / 2) - bubbleRect.left;
-            const arrowY = targetRect.top + (targetRect.height / 2) - bubbleRect.top;
-
-            const angle = Math.atan2(arrowY - (bubbleRect.height / 2), arrowX - (bubbleRect.width / 2)) * (180 / Math.PI);
-
-            guideArrow.style.top = `${bubbleRect.height / 2}px`;
-            guideArrow.style.left = `${bubbleRect.width / 2}px`;
-            guideArrow.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-            guideArrow.style.borderColor = `transparent transparent transparent var(--secondary-color)`;
-            
-        }
-
-        if (step === guideSteps.length - 1) {
-            guideNextButton.textContent = 'Selesai';
-        } else {
-            guideNextButton.textContent = 'Lanjut';
-        }
-
-        guideOverlay.style.display = 'block';
-        guidePerson.style.display = 'block';
-        guideBubble.style.display = 'block';
-        setTimeout(() => {
-            guideOverlay.style.opacity = '1';
-            guidePerson.style.opacity = '1';
-            guideBubble.style.opacity = '1';
-            createBubbleAnimation();
-        }, 10);
-    }
-
-    function startGuide() {
-        showGuideStep(0);
-    }
-    
-    function hideGuide() {
-        guideOverlay.style.opacity = '0';
-        guidePerson.style.opacity = '0';
-        guideBubble.style.opacity = '0';
-        
-        const bubbles = document.querySelectorAll('.bubble-animation');
-        bubbles.forEach(bubble => bubble.remove());
-
-        setTimeout(() => {
-            guideOverlay.style.display = 'none';
-            guidePerson.style.display = 'none';
-            guideBubble.style.display = 'none';
-
-            window.showFloatingChat();
-            showDiscountLabel();
-        }, 300);
-    }
-
-    function showDiscountLabel() {
-        const discountLabel = document.querySelector('.discount-label');
-        if (discountLabel) {
-            discountLabel.classList.add('show');
-        }
-    }
-
-    guideNextButton.addEventListener('click', () => {
-        currentStep++;
-        showGuideStep(currentStep);
-    });
-
-    guideSkipButton.addEventListener('click', hideGuide);
-
-    setTimeout(startGuide, 3000);
-});
-
-// Fungsionalitas FAQ
-document.addEventListener('DOMContentLoaded', () => {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            const answer = faqItem.querySelector('.faq-answer');
-            const icon = question.querySelector('i');
-
-            question.classList.toggle('active');
-            answer.classList.toggle('show');
-        });
-    });
-});
-
-// Fungsionalitas Klaim Voucher
-document.addEventListener('DOMContentLoaded', () => {
+    // =========================================================
+    // 4. FUNGSIONALITAS KLAIM VOUCHER & COPY
+    // =========================================================
     const copyButtons = document.querySelectorAll('.copy-btn');
     
     copyButtons.forEach(button => {
@@ -310,104 +97,247 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             }).catch(err => {
                 console.error('Gagal menyalin kode: ', err);
+                alert('Gagal menyalin kode. Silakan salin manual.');
             });
         });
     });
-});
 
-// Fungsionalitas Hot Offer (BARU)
-document.addEventListener('DOMContentLoaded', () => {
-    const countdownElement = document.getElementById('countdown');
-    const claimButton = document.getElementById('claim-voucher-btn');
-    const targetPhoneNumber = '+6287834224096';
+    // =========================================================
+    // 5. FUNGSIONALITAS POPUP GAMBAR PROMO
+    // =========================================================
+    const imagePopup = document.getElementById('image-popup');
+    const closeBtn = document.querySelector('#image-popup .popup-close-btn');
 
-    function startCountdown() {
-        let endTime = localStorage.getItem('countdownEndTime');
-        const now = new Date().getTime();
+    // Cek di localStorage apakah popup sudah pernah ditampilkan
+    const hasPopupBeenShown = localStorage.getItem('maskos_image_popup_shown');
 
-        if (!endTime || now > endTime) {
-            endTime = now + (24 * 60 * 60 * 1000);
-            localStorage.setItem('countdownEndTime', endTime);
-        }
-
-        const interval = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = endTime - now;
-
-            if (distance < 0) {
-                clearInterval(interval);
-                countdownElement.textContent = "00:00:00";
-                return;
-            }
-
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            const formatNumber = (num) => num < 10 ? '0' + num : num;
-
-            countdownElement.textContent = 
-                `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;
-        }, 1000);
+    if (imagePopup && !hasPopupBeenShown) {
+        setTimeout(() => {
+            imagePopup.style.display = 'block';
+        }, 500);
     }
 
-    if (countdownElement) {
-        startCountdown();
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            if (imagePopup) imagePopup.style.display = 'none';
+            localStorage.setItem('maskos_image_popup_shown', 'true');
+        }
+    }
+
+    window.onclick = function(event) {
+        if (event.target == imagePopup) {
+            imagePopup.style.display = 'none';
+            localStorage.setItem('maskos_image_popup_shown', 'true');
+        }
     }
     
+    const popupLink = document.getElementById('popup-link');
+    if (popupLink) {
+        popupLink.onclick = function() {
+            localStorage.setItem('maskos_image_popup_shown', 'true');
+            if (imagePopup) imagePopup.style.display = 'none';
+        }
+    }
+    
+    // =========================================================
+    // 6. FUNGSIONALITAS ACCORDION (FAQ & Pembayaran)
+    // =========================================================
+    
+    // Logika Accordion FAQ
+    const faqQuestions = document.querySelectorAll('.faq-section .faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('.fa-chevron-down');
+
+            // Tutup semua yang terbuka kecuali yang diklik
+            document.querySelectorAll('.faq-section .faq-answer').forEach(ans => {
+                if (ans !== answer && ans.style.maxHeight) {
+                    ans.style.maxHeight = null;
+                    ans.previousElementSibling.querySelector('.fa-chevron-down').classList.remove('rotate');
+                }
+            });
+
+            // Buka/Tutup yang diklik
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.classList.remove('rotate');
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                icon.classList.add('rotate');
+            }
+        });
+    });
+
+    // Logika Accordion Metode Pembayaran
+    const accordionHeaders = document.querySelectorAll('.payment-methods-section .accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.closest('.accordion-item');
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.accordion-icon');
+
+            // Tutup semua yang terbuka kecuali yang diklik
+            document.querySelectorAll('.payment-methods-section .accordion-item').forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                    otherItem.querySelector('.accordion-icon').classList.remove('rotate');
+                }
+            });
+
+            // Buka/Tutup yang diklik
+            item.classList.toggle('active');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.classList.remove('rotate');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.classList.add('rotate');
+            }
+        });
+    });
+
+    // =========================================================
+    // 7. FUNGSIONALITAS LAINNYA
+    // =========================================================
+
+    // Fungsionalitas Tombol Ambil Kesempatan (WhatsApp)
+    const earnButtons = document.querySelectorAll('.earn-btn');
+    earnButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            const jobTitle = button.parentElement.querySelector('.freelancer-job').textContent;
+            const targetPhoneNumber = '+6281234567890'; // Ganti dengan nomor WA tujuan
+            const message = encodeURIComponent(`Halo, saya tertarik untuk mendaftar sebagai ${jobTitle}. Apakah ada lowongan yang tersedia?`);
+            const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    });
+
+    // Fungsionalitas Tombol Klaim Hot Offer
+    const claimButton = document.getElementById('claim-voucher-btn');
     if (claimButton) {
         claimButton.addEventListener('click', (event) => {
             event.preventDefault();
+            const targetPhoneNumber = '6281234567890'; // Ganti dengan nomor WA tujuan
             const message = encodeURIComponent("Saya mendapatkan voucher bikin web portofolio 50% s/d Rp 10.000 dari website Maskos.");
             const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${message}`;
             window.open(whatsappUrl, '_blank');
         });
     }
+
+}); // END document.addEventListener('DOMContentLoaded', function() {
+
+// =========================================================
+// 8. FUNGSIONALITAS BANNER SLIDESHOW
+// =========================================================
+let bannerIndex = 0;
+const bannerSlideshow = document.getElementById('banner-slideshow');
+const bannerSlides = document.querySelectorAll('.banner-slide');
+const bannerTotalSlides = bannerSlides.length;
+
+function slideBanner() {
+    // Pastikan elemen ditemukan dan ada slide
+    if (!bannerSlideshow || bannerTotalSlides === 0) return;
+
+    bannerIndex++;
+    if (bannerIndex >= bannerTotalSlides) {
+        bannerIndex = 0;
+    }
+    const offset = -100 * bannerIndex;
+    bannerSlideshow.style.transform = `translateX(${offset}%)`;
+    setTimeout(slideBanner, 4000);
+}
+
+if (bannerSlides.length > 0) {
+    slideBanner();
+}
+
+// =========================================================
+// 9. FUNGSIONALITAS HOT OFFER COUNTDOWN (FIXED NaN)
+// =========================================================
+
+// Fungsi bantuan untuk memformat angka menjadi dua digit (misal: 5 menjadi 05)
+function formatTime(time) {
+    return time < 10 ? "0" + time : time;
+}
+
+function startCountdown() {
+    const countdownElement = document.getElementById('countdown');
+    if (!countdownElement) return;
+
+    // 1. Ambil waktu target dari localStorage (jika ada)
+    // Menggunakan kunci yang berbeda untuk menghindari konflik dengan logika lain
+    let countDownTime = localStorage.getItem('maskos_countdown_target');
+    let now = new Date().getTime();
+
+    // 2. Jika waktu target belum ada atau sudah kedaluwarsa, set target baru (24 jam dari sekarang)
+    if (!countDownTime || Number(countDownTime) < now) {
+        // Tambahkan 24 jam (24 * 60 * 60 * 1000 milidetik) ke waktu sekarang
+        countDownTime = now + (24 * 60 * 60 * 1000); 
+        localStorage.setItem('maskos_countdown_target', countDownTime);
+    }
+
+    // 3. Konversi ke angka untuk perhitungan
+    countDownTime = Number(countDownTime);
+
+    // Update the count down every 1 second
+    const x = setInterval(function() {
+
+        const now = new Date().getTime();
+        const distance = countDownTime - now;
+            
+        // Time calculations for hours, minutes and seconds
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+        // Output the result in element
+        if (countdownElement) {
+            countdownElement.innerHTML = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+        }
+            
+        // If the count down is finished, write some text and reset
+        if (distance < 0) {
+            clearInterval(x);
+            // Hapus target lama, sehingga saat fungsi dipanggil lagi, ia akan membuat target baru.
+            localStorage.removeItem('maskos_countdown_target');
+            if (countdownElement) {
+                countdownElement.innerHTML = "00:00:00";
+                // Mulai ulang timer setelah 3 detik
+                setTimeout(startCountdown, 3000); 
+            }
+        }
+    }, 1000);
+}
+
+// Panggil fungsi countdown saat DOM siap
+document.addEventListener('DOMContentLoaded', function() {
+    startCountdown(); 
 });
 
-// Fungsionalitas Pop-up dan WhatsApp BARU
-document.addEventListener('DOMContentLoaded', () => {
-    const moreInfoLinks = document.querySelectorAll('.more-info-link');
-    const earnButtons = document.querySelectorAll('.earn-btn');
-    const modal = document.getElementById('modal-syarat');
-    const closeBtn = document.querySelector('.close-btn');
 
-    // Menampilkan modal saat link Selengkapnya diklik
-    moreInfoLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            modal.style.display = 'flex';
-        });
-    });
-
-    // Menutup modal saat tombol 'x' diklik
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    // Menutup modal saat mengklik di luar area modal
-    window.addEventListener('click', (event) => {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
-    
-    // Otomatisasi Slideshow Voucher
+// =========================================================
+// 10. FUNGSIONALITAS VOUCHER SLIDESHOW
+// =========================================================
 const voucherContainer = document.querySelector('.voucher-slideshow-container');
 const voucherWrapper = document.querySelector('.voucher-card-wrapper');
 let scrollAmount = 0;
-const scrollSpeed = 2000; // Geser setiap 4 detik
+const scrollSpeed = 4000; // Geser setiap 4 detik
 
-// Fungsi untuk menggeser ke kartu berikutnya
 function autoSlideVouchers() {
+    if (!voucherWrapper || !voucherContainer || voucherWrapper.children.length === 0) return;
+    
     // Ambil lebar setiap kartu voucher
-    const cardWidth = voucherWrapper.firstElementChild.offsetWidth + 24; // Lebar kartu + gap (1.5rem = 24px)
+    // Menggunakan offsetWidth kartu pertama ditambah nilai margin/gap yang diasumsikan 24px (1.5rem)
+    const cardWidth = voucherWrapper.firstElementChild.offsetWidth + 24; 
     
     // Geser ke kanan sebanyak satu kartu
     scrollAmount += cardWidth;
 
     // Jika sudah di akhir, kembali ke awal
-    if (scrollAmount >= voucherWrapper.scrollWidth - voucherContainer.clientWidth) {
+    if (scrollAmount >= voucherWrapper.scrollWidth - voucherContainer.clientWidth + cardWidth/2) {
         scrollAmount = 0;
     }
 
@@ -419,46 +349,6 @@ function autoSlideVouchers() {
 }
 
 // Mulai pergeseran otomatis
-setInterval(autoSlideVouchers, scrollSpeed);
-
-     // Tambahkan kode ini ke file script.js yang sudah ada
-
-// Fungsi untuk mengaktifkan dropdown di bagian FAQ dan Metode Pembayaran
-function setupAccordion(accordionClass) {
-    const accordionHeaders = document.querySelectorAll(accordionClass + ' .accordion-header');
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            // Toggle kelas 'active' pada header yang diklik
-            header.classList.toggle('active');
-
-            // Temukan konten yang terkait
-            const content = header.nextElementSibling;
-            
-            // Toggle kelas 'show' pada konten
-            if (content.classList.contains('show')) {
-                content.classList.remove('show');
-            } else {
-                content.classList.add('show');
-            }
-        });
-    });
+if (voucherWrapper && voucherContainer) {
+    setInterval(autoSlideVouchers, scrollSpeed);
 }
-
-// Panggil fungsi untuk setiap bagian accordion
-setupAccordion('.payment-accordion');
-setupAccordion('.faq-container'); // Pastikan ini juga dipanggil untuk FAQ jika belum
-
-    
-    // Fungsionalitas tombol Ambil Kesempatan (WhatsApp)
-    earnButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-            const jobTitle = button.parentElement.querySelector('.freelancer-job').textContent;
-            const targetPhoneNumber = '+6287834224096';
-            const message = encodeURIComponent(`Halo, saya tertarik untuk mendaftar sebagai ${jobTitle}. Apakah ada lowongan yang tersedia?`);
-            const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        });
-    });
-});
