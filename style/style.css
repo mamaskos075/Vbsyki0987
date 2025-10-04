@@ -18,7 +18,9 @@ body {
     color: var(--text-color);
 }
 
+/* ========================================================= */
 /* --- Preloader / Loading Screen --- */
+/* ========================================================= */
 #preloader {
     position: fixed;
     top: 0;
@@ -76,7 +78,9 @@ body {
     font-weight: 600;
 }
 
+/* ========================================================= */
 /* --- Header & Navigasi --- */
+/* ========================================================= */
 .header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -144,6 +148,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
+    z-index: 1001; /* Pastikan di atas menu yang muncul */
 }
 
 .hamburger span {
@@ -196,13 +201,14 @@ body {
     animation-timing-function: ease-in-out;
 }
 
-/* --- Bagian Banner (DIPERBAIKI) --- */
+/* ========================================================= */
+/* --- Bagian Banner --- */
+/* ========================================================= */
 .banner-section {
     position: relative;
     width: 91%;
     max-width: 700px;
     margin: 2rem auto 0;
-    /* Atur tinggi tetap dan pastikan overflow tersembunyi */
     height: 250px;
     overflow: hidden;
     border-radius: 20px;
@@ -224,7 +230,6 @@ body {
 }
 
 .banner-slide img {
-    /* Atur gambar untuk mengisi 100% dari wadahnya */
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -261,7 +266,7 @@ body {
     }
 }
 
-/* --- DISKON LABEL BARU (Gaya dengan Animasi) --- */
+/* --- DISKON LABEL BARU --- */
 .discount-label {
     max-width: 1000px;
     margin: 0 auto 2rem;
@@ -289,7 +294,9 @@ body {
     margin: 0;
 }
 
+/* ========================================================= */
 /* --- Bagian Layanan --- */
+/* ========================================================= */
 .app-services {
     padding: 2rem;
     max-width: 1000px;
@@ -406,7 +413,9 @@ body {
     text-transform: capitalize;
 }
 
+/* ========================================================= */
 /* --- VOUCHER SECTION --- */
+/* ========================================================= */
 .voucher-section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -440,7 +449,7 @@ body {
 .voucher-card {
     flex: 0 0 90%; 
     min-width: 280px;
-    height: 220px;
+    height: 280px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     color: var(--secondary-color);
@@ -537,7 +546,9 @@ body {
     opacity: 0.6;
 }
 
+/* ========================================================= */
 /* --- HOT OFFER SECTION (BARU) --- */
+/* ========================================================= */
 .hot-offer-section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -622,77 +633,81 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- Floating Customer Service Chat --- */
+/* ========================================================= */
+/* --- Floating Customer Service Chat (FIXED) --- */
+/* ========================================================= */
 .floating-chat {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 100;
-    display: none;
+    z-index: 1000;
+    display: flex;
     align-items: center;
     text-decoration: none;
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 50px; 
     box-shadow: none;
+    /* CSS Awal: Sembunyikan dengan opacity/transform, JS akan menambah .show-chat */
+    opacity: 0; 
+    transform: translateY(20px);
     transition: all 0.5s ease-in-out;
-    opacity: 0;
 }
 
 .floating-chat.show-chat {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .chat-content {
     display: flex;
     align-items: center;
-    background-color: var(--primary-color);
+    background-color: #25d366; /* Warna khas WhatsApp/Hijau */
     color: var(--secondary-color);
     border-radius: 50px;
-    padding: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease-in-out;
+    padding: 0.5rem 0.5rem; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
+/* Teks disembunyikan secara default di CSS (max-width: 0) */
 .chat-text {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
     max-width: 0;
-    transition: max-width 0.5s ease-in-out, margin-right 0.5s ease-in-out;
     margin-right: 0;
+    transition: max-width 0.3s ease-in-out, margin-right 0.3s ease-in-out;
 }
 
-.chat-text.show {
+/* Saat hover, tampilkan teks */
+.floating-chat:hover .chat-text {
     max-width: 150px;
     margin-right: 0.5rem;
 }
 
 .chat-icon {
     font-size: 1.8rem;
-    padding: 0.3rem;
-    background-color: var(--primary-color);
+    padding: 0; 
+    background-color: transparent;
     border-radius: 50%;
     color: var(--secondary-color);
-    transition: background-color 0.3s ease;
-}
-
-.floating-chat:hover .chat-icon {
-    background-color: #007077;
 }
 
 /* Animasi Ikon Bergetar */
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .chat-icon.animate-pulse {
-    animation: pulse 1s infinite ease-in-out;
+    animation: pulse 1.5s infinite ease-in-out;
 }
 
-/* --- Guide/Panduan --- */
+/* ========================================================= */
+/* --- Guide/Panduan (CSS hanya untuk elemen yang tersisa) --- */
+/* ========================================================= */
 #guide-overlay {
     position: fixed;
     top: 0;
@@ -702,6 +717,8 @@ body {
     background: rgba(0, 0, 0, 0.7);
     z-index: 2000;
     display: none;
+    opacity: 0; /* Tambahkan ini agar transisi bekerja */
+    transition: opacity 0.3s ease-in-out;
 }
 
 #guide-person {
@@ -745,15 +762,6 @@ body {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-#guide-bubble.visible {
-    opacity: 1;
-    display: block;
-}
-
-.guide-text-container {
-    margin-bottom: 1rem;
-}
-
 .guide-controls {
     display: flex;
     justify-content: space-between;
@@ -773,20 +781,11 @@ body {
     color: var(--secondary-color);
 }
 
-#guide-next:hover {
-    background-color: #007077;
-}
-
 #guide-skip {
     background-color: #ccc;
     color: var(--text-color);
 }
 
-#guide-skip:hover {
-    background-color: #bbb;
-}
-
-/* Gaya Panah Baru */
 #guide-arrow {
     position: absolute;
     width: 0;
@@ -796,7 +795,6 @@ body {
     transform-origin: center;
 }
 
-/* Gaya Animasi Gelembung Kecil */
 .bubble-animation {
     position: absolute;
     width: 10px;
@@ -808,27 +806,22 @@ body {
     animation: popAndMove 2s infinite ease-in-out;
 }
 
+/* Keyframes ini akan di-override oleh JavaScript, tetapi didefinisikan sebagai fallback */
 @keyframes popAndMove {
     0% {
         transform: translate(0, 0) scale(0.2);
         opacity: 0;
     }
-    50% {
-        opacity: 1;
-        transform: translate(0, -50px) scale(1);
-    }
     100% {
         opacity: 0;
-        transform: translate(0, -100px) scale(0.5);
+        transform: translate(100px, -100px) scale(0.5);
     }
 }
 
-/* Pengaturan untuk setiap gelembung agar bergerak berurutan */
-.bubble-animation:nth-child(1) { animation-delay: 0s; }
-.bubble-animation:nth-child(2) { animation-delay: 0.5s; }
-.bubble-animation:nth-child(3) { animation-delay: 1s; }
 
-/* --- Promo Slideshow Section (DIPERBAIKI) --- */
+/* ========================================================= */
+/* --- Promo Slideshow Section --- */
+/* ========================================================= */
 .promo-slideshow {
     max-width: 1000px;
     height: 300px;
@@ -838,7 +831,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: var(--secondary-color);
-    /* Pastikan overflow tersembunyi */
     overflow: hidden;
 }
 
@@ -864,7 +856,6 @@ body {
     height: 100%;
     max-width: 1000px;
     margin: auto;
-    /* Pastikan overflow tersembunyi */
     overflow: hidden;
 }
 
@@ -874,7 +865,6 @@ body {
 }
 
 .mySlides img {
-    /* Atur gambar untuk mengisi 100% dari wadahnya */
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -894,7 +884,9 @@ body {
     to { opacity: 1 }
 }
 
+/* ========================================================= */
 /* --- FAQ Section --- */
+/* ========================================================= */
 .faq-section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -948,7 +940,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.faq-question.active i {
+.faq-question .rotate {
     transform: rotate(180deg);
 }
 
@@ -959,17 +951,16 @@ body {
     transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
-.faq-answer.show {
-    max-height: 200px;
-    padding: 1.2rem;
-}
+/* .faq-answer.show tidak diperlukan lagi karena diganti JS max-height */
 
 .faq-answer p {
     line-height: 1.6;
     color: #555;
 }
 
+/* ========================================================= */
 /* --- Bagian Baru: Penghasilan Tambahan --- */
+/* ========================================================= */
 .earn-section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -1065,7 +1056,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- Gaya Pop-up Modal --- */
+/* ========================================================= */
+/* --- Gaya Pop-up Modal (Syarat & Ketentuan) --- */
+/* ========================================================= */
 .modal {
     display: none;
     position: fixed;
@@ -1144,130 +1137,9 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* --- Responsif --- */
-@media (max-width: 768px) {
-    .banner-section {
-        height: 150px;
-    }
-    .discount-label {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-        border-radius: 0 0 8px 8px;
-    }
-    #guide-person {
-        left: 20px;
-        bottom: 20px;
-    }
-    #guide-bubble {
-        bottom: 140px;
-        left: 20px;
-        width: calc(100% - 40px);
-    }
-    .guide-arrow {
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%) rotate(180deg);
-        border-bottom-color: var(--secondary-color);
-        border-top-color: transparent;
-    }
-    .header-container {
-        flex-wrap: wrap;
-    }
-    .search-container {
-        order: 3;
-        width: 100%;
-        margin-top: 1rem;
-    }
-    .search-input {
-        min-width: 100%;
-    }
-    .hamburger {
-        display: flex;
-    }
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 60%;
-        height: 100%;
-        background-color: var(--primary-color);
-        padding-top: 5rem;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
-    }
-    .nav-menu.is-active {
-        right: 0;
-    }
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-menu li {
-        margin: 1rem 0;
-    }
-    .app-grid {
-        justify-content: center;
-    }
-    .app-card {
-        padding: 0.7rem 1rem;
-    }
-    .app-card img {
-        width: 40px;
-        height: 40px;
-    }
-    .app-label {
-        font-size: 0.75rem;
-    }
-    .floating-chat {
-        top: auto;
-        bottom: 1rem;
-        right: 1rem;
-    }
-    .voucher-card {
-        flex: 0 0 95%; 
-        min-width: 250px;
-    }
-    .hot-offer-header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .hot-offer-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-    }
-    .hot-offer-text {
-        flex: 1;
-        margin-bottom: 0;
-    }
-    .freelancer-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .freelancer-card {
-        max-width: 100%;
-    }
-    .modal-content {
-        padding: 1.5rem;
-    }
-}
-
-@media (min-width: 769px) {
-    .voucher-card {
-        flex: 0 0 45%; 
-    }
-    .hot-offer-card {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .hot-offer-text {
-        text-align: left;
-    }
-}
-
-
+/* ========================================================= */
 /* --- Bagian Baru: Pilihan Metode Pembayaran --- */
+/* ========================================================= */
 .payment-methods-section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -1341,6 +1213,7 @@ body {
 
 .accordion-content {
     max-height: 0;
+    padding: 0 1.5rem; /* Padding horizontal tetap ada */
     overflow: hidden;
     transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
@@ -1349,8 +1222,8 @@ body {
     margin: 0 0 0.5rem 0;
 }
 
-.accordion-content.show {
-    max-height: 200px;
+/* Kelas yang dipicu JS untuk membuka/menutup */
+.accordion-content[style*="max-height"] {
     padding: 1.5rem;
 }
 
@@ -1359,7 +1232,9 @@ body {
     padding-left: 0;
 }
 
+/* ========================================================= */
 /* --- Bagian Baru: Pertanyaan dan Jawaban Pelanggan --- */
+/* ========================================================= */
 .customer-qa-section {
     max-width: 1000px;
     margin: 2rem auto;
@@ -1411,7 +1286,9 @@ body {
     color: var(--text-color);
 }
 
+/* ========================================================= */
 /* --- Bagian Baru: Footer --- */
+/* ========================================================= */
 .footer {
     background-color: var(--primary-color);
     color: #fff;
@@ -1462,7 +1339,7 @@ body {
 }
 
 .social-icons a:hover {
-    color: var(--accent-color);
+    color: #B2E5E7; /* Warna hover sekunder */
 }
 
 .footer-links {
@@ -1503,18 +1380,220 @@ body {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* ========================================================= */
+/* --- Styling untuk Popup Gambar Baru (MODAL) --- */
+/* ========================================================= */
+
+#image-popup {
+    display: none; /* Dikontrol oleh JS */
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7); 
+    /* Tambahkan align/justify agar popup berada di tengah */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content/Box */
+.image-popup-content {
+    background-color: transparent; 
+    /* Hapus margin agar berada di tengah */
+    margin: 0; 
+    padding: 0;
+    border: none;
+    width: 90%; 
+    max-width: 500px; 
+    position: relative;
+    border-radius: 8px;
+    box-shadow: none; 
+    animation: fadeInScale 0.3s ease-in-out;
+}
+
+/* Close Button (Diposisikan agar lebih terlihat) */
+.popup-close-btn {
+    color: #fff; 
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: -40px; 
+    right: -10px; 
+    cursor: pointer;
+    transition: color 0.3s;
+    background: #000;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 2001; /* Pastikan di atas overlay */
+}
+
+.popup-close-btn:hover,
+.popup-close-btn:focus {
+    color: var(--primary-color); 
+    background: #fff;
+    text-decoration: none;
+}
+
+/* Image styling */
+.popup-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Ensure the link covers the whole image */
+#popup-link {
+    display: block;
+    line-height: 0; 
+}
+
+
+/* ========================================================= */
+/* --- Media Query (Responsif) --- */
+/* ========================================================= */
 @media (max-width: 768px) {
+    .banner-section {
+        height: 150px;
+    }
+    .discount-label {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 0 0 8px 8px;
+    }
+    #guide-person {
+        left: 20px;
+        bottom: 20px;
+    }
+    #guide-bubble {
+        bottom: 140px;
+        left: 20px;
+        width: calc(100% - 40px);
+    }
+    .guide-arrow {
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+        border-bottom-color: var(--secondary-color);
+        border-top-color: transparent;
+    }
+    .header-container {
+        flex-wrap: wrap;
+    }
+    .search-container {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .search-input {
+        min-width: 100%;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100%;
+        background-color: var(--primary-color);
+        padding-top: 5rem;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+    }
+    .nav-menu.is-active {
+        right: 0;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    .app-grid {
+        justify-content: center;
+    }
+    .app-card {
+        padding: 0.7rem 1rem;
+    }
+    .app-card img {
+        width: 40px;
+        height: 40px;
+    }
+    .app-label {
+        font-size: 0.75rem;
+    }
+    /* Floating Chat Mobile Fix */
+    .floating-chat {
+        bottom: 10px;
+        right: 10px;
+    }
+    .floating-chat:hover .chat-text, .chat-text {
+        max-width: 0 !important;
+        margin-right: 0 !important;
+    }
+    .chat-icon {
+        font-size: 24px;
+        padding: 0.3rem;
+    }
+    /* End Floating Chat Fix */
+    .voucher-card {
+        flex: 0 0 95%; 
+        min-width: 250px;
+    }
+    .hot-offer-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .hot-offer-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    .hot-offer-text {
+        flex: 1;
+        margin-bottom: 0;
+    }
+    .freelancer-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .freelancer-card {
+        max-width: 100%;
+    }
+    .modal-content {
+        padding: 1.5rem;
+    }
     .footer-container {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
     }
-
     .footer-section {
         min-width: unset;
     }
+}
 
-    .social-icons {
-        justify-content: center;
+@media (min-width: 769px) {
+    .voucher-card {
+        flex: 0 0 45%; 
+    }
+    .hot-offer-card {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .hot-offer-text {
+        text-align: left;
     }
 }
