@@ -8,23 +8,23 @@ const templates = [
     
     // 3 Katalog Baru (Index 4, 5, 6)
     { id: 5, name: 'Marketing Spesialis', desc: ' Desain portofolio yang dapat kamu sesuaikan untuk memuat kreatifitasmu dibidang marketing.', price: 21.00, originalPrice: 50.00, image: 'images/template_6.png', demoUrl: 'template5.html' },
-    { id: 6, name: 'Administrasi', desc: 'Tampilan premium dengan skema warna monokromatik. Ideal untuk konsultan bisnis dan eksekutif.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=Corporate+Template', demoUrl: 'template9.html' },
-    { id: 7, name: 'The Photographer', desc: 'Berfokus pada tampilan galeri besar dan grid yang bersih. Terbaik untuk portofolio fotografi profesional.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=Photo+Template', demoUrl: 'https://codepen.io/pen/' },
+    { id: 6, name: 'Administrasi', desc: 'Tampilkan keahlian mu dalam bidang administrasi dan bangun personal branding terbaik bersama desain Administrasi.', price: 21.00, originalPrice: 50.00, image: 'images/template_7.png', demoUrl: 'template9.html' },
+    { id: 7, name: 'Fotographi', desc: 'Tunjukkan karya foto terbaikmu untuk menambah nilai prsonal branding mu bersama template photography .', price: 21.00, originalPrice: 50.00, image: 'images/template_8', demoUrl: 'template10.html' },
 ];
 
 // --- Data Ulasan Pembeli ---
 const reviewsData = [
-    { name: 'Rani C.', template: 'CreativePulse', review: 'Desainnya sangat dinamis dan mudah di kustomisasi. Benar-benar meningkatkan tampilan portofolio saya!', rating: 5, photo: 'https://via.placeholder.com/50/FFC107?text=R' },
-    { name: 'Budi S.', template: 'CodeCraft Dev', review: 'Sebagai developer, template ini sangat rapi dan menonjolkan tumpukan teknologi saya. Sangat direkomendasikan!', rating: 5, photo: 'https://via.placeholder.com/50/008F97?text=B' },
-    { name: 'Kania P.', template: 'NeoMinimal', review: 'Sangat minimalis dan fokus. Persis seperti yang saya butuhkan untuk menampilkan karya fotografi saya.', rating: 4, photo: 'https://via.placeholder.com/50/D3D3D3?text=K' },
-    { name: 'Faisal A.', template: 'ConsultPro', review: 'Tampilan profesional dan berwibawa. Klien saya langsung merasa lebih percaya. Top!', rating: 5, photo: 'https://via.placeholder.com/50/A9A9A9?text=F' },
-    { name: 'Eko W.', template: 'CreativePulse', review: 'Animasi scrolling-nya smooth banget. Keren!', rating: 5, photo: 'https://via.placeholder.com/50/5D4037?text=E' },
+    { name: 'user0419.', template: 'pertanian', review: 'Desainnya menarik. portofolio saya jadi lebih rapi👍👍👍', rating: 5, photo: 'images/ulasan1_portofolio.png' },
+    { name: 'user1552.', template: 'pertanian agribisnis', review: 'websitenya bagusss bangettt😭 portofolioku jadi lebih bagusss yg ngoding juga cepet. kereennn🤗', rating: 5, photo: 'images/ulasan2_portofolio.png' },
+    { name: 'Kania Mahasiswi Unpas.', template: 'Desain Kreatif', review: 'Sangat minimalis dan fokus. Persis seperti yang saya butuhkan untuk menampilkan karya karya saya.', rating: 4, photo: 'images/ulasan3_portofolio.png' },
+    { name: 'user27410.', template: 'pertanian', review: 'Tampilan profesional dan berwibawa.', rating: 5, photo: 'images/ulasan4_portofolio.png' },
+    { name: 'user6293.', template: 'pertanian', review: 'Animasi scrolling-nya smooth banget keren', rating: 5, photo: 'images/ulasan5_portofolio.png' },
 ];
 
 // --- Variabel DOM dan State ---
 let cart = []; 
 let selectedPayment = ''; 
-const WHATSAPP_ADMIN = '6285724121360';
+const WHATSAPP_ADMIN = '6287834224096';
 const PAYMENT_OPTIONS = ['BCA', 'SeaBank', 'Shopeepay', 'QRIS'];
 
 const productGrid = document.getElementById('templates');
