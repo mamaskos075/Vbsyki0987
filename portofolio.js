@@ -2,14 +2,14 @@
 const templates = [
     // 4 Katalog Awal (Index 0, 1, 2, 3)
     { id: 1, name: 'Website Portofolio Pertanian', desc: 'Desain portofolio tema pertanian terbaru dan informatif. Cocok untuk kamu yang memiliki minat dan karya di bidang pertanian, desain minimalis serta interaktif.', price: 49000, originalPrice: 150000, image: 'images/template_2.png', demoUrl: 'template1.html' },
-    { id: 2, name: 'Website Portofolio Perikanan', desc: 'Desain portofolio tema perikanan, cocok untuk kamu yang memiliki karya dan pengalaman dibidang perikanan.', price: 49.000, originalPrice: 150.000, image: 'images/template_3.png', demoUrl: 'template2.html' },
-    { id: 3, name: 'Website Portofolio Agribisnis', desc: 'Template desain portofolio tema agribisnis pertanian, cocok untuk kamu yang memiliki karya dibidang agribisnis.', price: 49.000, originalPrice: 150.000, image: 'images/template_4.png', demoUrl: 'template3.html' },
-    { id: 4, name: 'Website Portofolio Kreatif', desc: 'Desain portofolio desain kreatif, dapat kamu sesuaikan dengan karya yang kamu miliki dibidang kreatifitas digital.', price: 49.000, originalPrice: 150.000, image: 'images/template_5.png', demoUrl: 'template4.html' },
+    { id: 2, name: 'Website Portofolio Perikanan', desc: 'Desain portofolio tema perikanan, cocok untuk kamu yang memiliki karya dan pengalaman dibidang perikanan.', price: 49000, originalPrice: 150000, image: 'images/template_3.png', demoUrl: 'template2.html' },
+    { id: 3, name: 'Website Portofolio Agribisnis', desc: 'Template desain portofolio tema agribisnis pertanian, cocok untuk kamu yang memiliki karya dibidang agribisnis.', price: 49000, originalPrice: 150000, image: 'images/template_4.png', demoUrl: 'template3.html' },
+    { id: 4, name: 'Website Portofolio Kreatif', desc: 'Desain portofolio desain kreatif, dapat kamu sesuaikan dengan karya yang kamu miliki dibidang kreatifitas digital.', price: 49000, originalPrice: 150000, image: 'images/template_5.png', demoUrl: 'template4.html' },
     
     // 3 Katalog Baru (Index 4, 5, 6)
-    { id: 5, name: 'Website Portofolio Marketing', desc: ' Desain portofolio yang dapat kamu sesuaikan untuk memuat kreatifitasmu dibidang marketing.', price: 49.000, originalPrice: 150.000, image: 'images/template_6.png', demoUrl: 'template5.html' },
-    { id: 6, name: 'Website Portofolio Administrasi', desc: 'Tampilkan keahlian mu dalam bidang administrasi dan bangun personal branding terbaik bersama desain Administrasi.', price: 49.000, originalPrice: 150.000, image: 'images/template_7.png', demoUrl: 'template9.html' },
-    { id: 7, name: 'Website Portofolio Fotografi', desc: 'Tunjukkan karya foto terbaikmu untuk menambah nilai prsonal branding mu bersama template photography .', price: 49.000, originalPrice: 150.00, image: 'images/template_8.png', demoUrl: 'template10.html' },
+    { id: 5, name: 'Website Portofolio Marketing', desc: ' Desain portofolio yang dapat kamu sesuaikan untuk memuat kreatifitasmu dibidang marketing.', price: 49000, originalPrice: 150000, image: 'images/template_6.png', demoUrl: 'template5.html' },
+    { id: 6, name: 'Website Portofolio Administrasi', desc: 'Tampilkan keahlian mu dalam bidang administrasi dan bangun personal branding terbaik bersama desain Administrasi.', price: 49000, originalPrice: 150000, image: 'images/template_7.png', demoUrl: 'template9.html' },
+    { id: 7, name: 'Website Portofolio Fotografi', desc: 'Tunjukkan karya foto terbaikmu untuk menambah nilai prsonal branding mu bersama template photography .', price: 49000, originalPrice: 150000, image: 'images/template_8.png', demoUrl: 'template10.html' },
 ];
 
 // --- Data Ulasan Pembeli ---
