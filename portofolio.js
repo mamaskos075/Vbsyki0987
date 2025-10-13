@@ -1,14 +1,14 @@
 // --- Data Template ---
 const templates = [
     // 4 Katalog Awal (Index 0, 1, 2, 3)
-    { id: 1, name: 'Pertanian', desc: 'Desain portofolio tema pertanian terbaru dan informatif. Cocok untuk kamu yang memiliki minat dan karya di bidang pertanian, desain minimalis serta interaktif.', price: 21.00, originalPrice: 50.00, image: 'images/template_2.png', demoUrl: 'https://codepen.io/pen/' },
-    { id: 2, name: 'CodeCraft Dev', desc: 'Dibuat khusus untuk Developer. Fitur visualisasi stack teknologi yang keren. Responsif dan SEO-Friendly.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=CodeCraft+Template', demoUrl: 'https://codepen.io/pen/' },
-    { id: 3, name: 'CreativePulse', desc: 'Portofolio penuh energi dengan animasi scrolling dan transisi antar bagian yang halus. Ideal untuk agensi kreatif.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=CreativePulse+Template', demoUrl: 'https://codepen.io/pen/' },
-    { id: 4, name: 'ConsultPro', desc: 'Tampilan profesional dan berwibawa. Fokus pada testimoni klien dan layanan konsultasi terperinci.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=ConsultPro+Template', demoUrl: 'https://codepen.io/pen/' },
+    { id: 1, name: 'Pertanian', desc: 'Desain portofolio tema pertanian terbaru dan informatif. Cocok untuk kamu yang memiliki minat dan karya di bidang pertanian, desain minimalis serta interaktif.', price: 21.00, originalPrice: 50.00, image: 'images/template_2.png', demoUrl: 'template1.html' },
+    { id: 2, name: 'perikanan', desc: 'Desain portofolio tema perikanan, cocok untuk kamu yang memiliki karya dan pengalaman dibidang perikanan.', price: 21.00, originalPrice: 50.00, image: 'images/template_3.png', demoUrl: 'template2.html' },
+    { id: 3, name: 'Pertanian Agribisnis', desc: 'Template desain portofolio tema agribisnis pertanian, cocok untuk kamu yang memiliki karya dibidang agribisnis.', price: 21.00, originalPrice: 50.00, image: 'images/template_4.png', demoUrl: 'template3.html' },
+    { id: 4, name: 'Desain Kreatif', desc: 'Desain portofolio desain kreatif, dapat kamu sesuaikan dengan karya yang kamu miliki dibidang kreatifitas digital.', price: 21.00, originalPrice: 50.00, image: 'images/template_5.png', demoUrl: 'template4.html' },
     
     // 3 Katalog Baru (Index 4, 5, 6)
-    { id: 5, name: 'Artisan Studio', desc: 'Desain yang menonjolkan tekstur dan detail halus. Sempurna untuk seniman, ilustrator, dan pengrajin.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=Artisan+Template', demoUrl: 'https://codepen.io/pen/' },
-    { id: 6, name: 'Corporate Edge', desc: 'Tampilan premium dengan skema warna monokromatik. Ideal untuk konsultan bisnis dan eksekutif.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=Corporate+Template', demoUrl: 'https://codepen.io/pen/' },
+    { id: 5, name: 'Marketing Spesialis', desc: ' Desain portofolio yang dapat kamu sesuaikan untuk memuat kreatifitasmu dibidang marketing.', price: 21.00, originalPrice: 50.00, image: 'images/template_6.png', demoUrl: 'template5.html' },
+    { id: 6, name: 'Administrasi', desc: 'Tampilan premium dengan skema warna monokromatik. Ideal untuk konsultan bisnis dan eksekutif.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=Corporate+Template', demoUrl: 'template9.html' },
     { id: 7, name: 'The Photographer', desc: 'Berfokus pada tampilan galeri besar dan grid yang bersih. Terbaik untuk portofolio fotografi profesional.', price: 21.00, originalPrice: 50.00, image: 'https://via.placeholder.com/300x200?text=Photo+Template', demoUrl: 'https://codepen.io/pen/' },
 ];
 
