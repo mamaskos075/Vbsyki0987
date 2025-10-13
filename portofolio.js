@@ -9,7 +9,7 @@ const templates = [
     // 3 Katalog Baru (Index 4, 5, 6)
     { id: 5, name: 'Marketing Spesialis', desc: ' Desain portofolio yang dapat kamu sesuaikan untuk memuat kreatifitasmu dibidang marketing.', price: 21.00, originalPrice: 50.00, image: 'images/template_6.png', demoUrl: 'template5.html' },
     { id: 6, name: 'Administrasi', desc: 'Tampilkan keahlian mu dalam bidang administrasi dan bangun personal branding terbaik bersama desain Administrasi.', price: 21.00, originalPrice: 50.00, image: 'images/template_7.png', demoUrl: 'template9.html' },
-    { id: 7, name: 'Fotografi', desc: 'Tunjukkan karya foto terbaikmu untuk menambah nilai prsonal branding mu bersama template photography .', price: 21.00, originalPrice: 50.00, image: 'images/template_8', demoUrl: 'template10.html' },
+    { id: 7, name: 'Fotografi', desc: 'Tunjukkan karya foto terbaikmu untuk menambah nilai prsonal branding mu bersama template photography .', price: 21.00, originalPrice: 50.00, image: 'images/template_8.png', demoUrl: 'template10.html' },
 ];
 
 // --- Data Ulasan Pembeli ---
