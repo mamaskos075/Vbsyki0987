@@ -1,0 +1,90 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFFF; /* Latar belakang Putih */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #00FFFF; /* Garis tepi tipis Biru Cyan */
+}
+
+h1 {
+    color: #049ADE; /* Biru Cyan */
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #00FFFF;
+    padding-bottom: 10px;
+}
+
+.intro, .footer-note {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.terms-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.terms-list li {
+    background-color: #F0FFFF; /* Warna Putih kebiruan sangat lembut */
+    border-left: 5px solid #00FFFF; /* Biru Cyan */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* ATURAN BARU: Membuat teks tebal (strong) menjadi Biru Cyan */
+.terms-list li strong {
+    color: #008080; /* Warna Biru Cyan yang sedikit lebih gelap agar terbaca */
+    font-weight: bold;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#accept-button {
+    background-color: #00FFFF; /* Biru Cyan */
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#accept-button:hover {
+    background-color: #33FFFF; /* Biru Cyan sedikit lebih terang saat di-hover */
+}
+
+#confirmation-message {
+    color: #00FFFF; /* Biru Cyan */
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
